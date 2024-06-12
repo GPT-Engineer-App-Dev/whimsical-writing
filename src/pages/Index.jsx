@@ -1,4 +1,5 @@
-import { Box, Container, Flex, Heading, Link, Text, VStack, Button, useColorMode } from "@chakra-ui/react";
+import { Heading, Link } from "@chakra-ui/react";
+import { Box, Container, Flex, Text, VStack, Button, useColorMode } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
 

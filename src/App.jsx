@@ -1,5 +1,5 @@
-import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
-import { Button, Flex, useColorMode } from "@chakra-ui/react";
+import { Route, BrowserRouter as Router, Routes, Link as RouterLink } from "react-router-dom";
+import { Button, Flex, useColorMode, Heading, Link } from "@chakra-ui/react";
 import Index from "./pages/Index.jsx";
 import AddPost from "./pages/AddPost.jsx";
 
