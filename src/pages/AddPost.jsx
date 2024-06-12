@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Box, Button, Container, Flex, FormControl, FormLabel, Heading, Input, Textarea, useColorMode, Heading, Link } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, FormControl, FormLabel, Heading, Input, Textarea, useColorMode, Link } from "@chakra-ui/react";
 import { useNavigate, Link as RouterLink } from "react-router-dom";
 
 const AddPost = () => {
