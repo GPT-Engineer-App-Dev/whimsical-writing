@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Heading, Link, Text, VStack, Button } from "@chakra-ui/react";
+import { Box, Container, Flex, Heading, Link, Text, VStack, Button, useColorModeValue } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
 
@@ -11,7 +11,7 @@ const Index = () => {
   }, []);
 
   return (
-    <Container maxW="container.xl">
+    <Container maxW="container.xl" bg={useColorModeValue("white", "gray.800")}>
       <Flex as="header" py={4} justifyContent="space-between" alignItems="center" borderBottom="1px" borderColor="gray.200">
         <Heading as="h1" size="lg">My Personal Blog</Heading>
         <Flex as="nav">
@@ -29,7 +29,7 @@ const Index = () => {
         <VStack spacing={4} align="stretch">
           {posts.length > 0 ? (
             posts.map((post, index) => (
-              <Box key={index} p={5} shadow="md" borderWidth="1px">
+              <Box key={index} p={5} shadow="md" borderWidth="1px" bg={useColorModeValue("gray.100", "gray.700")}>
                 <Heading fontSize="xl">{post.title}</Heading>
                 <Text mt={4}>{post.content}</Text>
               </Box>
