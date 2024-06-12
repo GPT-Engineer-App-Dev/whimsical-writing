@@ -1,9 +1,10 @@
-import { Box, Container, Flex, Heading, Link, Text, VStack, Button } from "@chakra-ui/react";
+import { Box, Container, Flex, Heading, Link, Text, VStack, Button, useColorMode } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
 
 const Index = () => {
   const [posts, setPosts] = useState([]);
+  const { colorMode, toggleColorMode } = useColorMode();
 
   useEffect(() => {
     const storedPosts = JSON.parse(localStorage.getItem("posts")) || [];
@@ -19,6 +20,9 @@ const Index = () => {
           <Link as={RouterLink} to="/about" mx={2}>About</Link>
           <Link as={RouterLink} to="/blog" mx={2}>Blog</Link>
         </Flex>
+        <Button onClick={toggleColorMode} ml={4}>
+          {colorMode === "light" ? "Dark Mode" : "Light Mode"}
+        </Button>
       </Flex>
 
       <Box as="main" py={8}>

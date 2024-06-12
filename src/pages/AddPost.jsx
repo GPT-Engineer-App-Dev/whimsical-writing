@@ -1,11 +1,12 @@
 import { useState } from "react";
-import { Box, Button, Container, Flex, FormControl, FormLabel, Heading, Input, Textarea } from "@chakra-ui/react";
+import { Box, Button, Container, Flex, FormControl, FormLabel, Heading, Input, Textarea, useColorMode } from "@chakra-ui/react";
 import { useNavigate } from "react-router-dom";
 
 const AddPost = () => {
   const [title, setTitle] = useState("");
   const [content, setContent] = useState("");
   const navigate = useNavigate();
+  const { colorMode, toggleColorMode } = useColorMode();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -19,6 +20,9 @@ const AddPost = () => {
     <Container maxW="container.md">
       <Flex as="header" py={4} justifyContent="space-between" alignItems="center" borderBottom="1px" borderColor="gray.200">
         <Heading as="h1" size="lg">Add New Post</Heading>
+        <Button onClick={toggleColorMode} ml={4}>
+          {colorMode === "light" ? "Dark Mode" : "Light Mode"}
+        </Button>
       </Flex>
 
       <Box as="main" py={8}>
